@@ -1,0 +1,2 @@
+" vim: set foldmarker={,} foldlevel=1 foldmethod=marker modelines=4
+let mapleader = ","
