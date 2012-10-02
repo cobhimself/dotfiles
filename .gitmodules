@@ -1,0 +1,6 @@
+[submodule ".janus"]
+	path = .janus
+	url = https://github.com/cobhimself/.janus.git
+[submodule ".vim"]
+	path = .vim
+	url = https://github.com/carlhuda/janus.git

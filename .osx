@@ -13,10 +13,10 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "MathBook Pro"
-sudo scutil --set HostName "MathBook Pro"
-sudo scutil --set LocalHostName "MathBook-Pro"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MathBook-Pro"
+sudo scutil --set ComputerName "cobtop"
+sudo scutil --set HostName "cobtop"
+sudo scutil --set LocalHostName "cobtop"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "cobtop"
 
 # Menu bar: disable transparency
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
@@ -250,9 +250,9 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
-# Use list view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# Use column view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
@@ -409,7 +409,7 @@ defaults write com.apple.mail DisableReplyAnimations -bool true
 defaults write com.apple.mail DisableSendAnimations -bool true
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+#defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
@@ -422,10 +422,10 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a modified version of the Pro theme by default in Terminal.app
-open "$HOME/init/Mathias.terminal"
+#open "$HOME/init/Mathias.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
-defaults write com.apple.terminal "Default Window Settings" -string "Mathias"
-defaults write com.apple.terminal "Startup Window Settings" -string "Mathias"
+#defaults write com.apple.terminal "Default Window Settings" -string "Mathias"
+#defaults write com.apple.terminal "Startup Window Settings" -string "Mathias"
 
 # Enable “focus follows mouse” for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
@@ -440,7 +440,7 @@ defaults write com.apple.terminal "Startup Window Settings" -string "Mathias"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+#hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
@@ -478,29 +478,29 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 ###############################################################################
 
 # Start SizeUp at login
-defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
+#defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
 
 # Don’t show the preferences window on next start
-defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
+#defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
 ###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
 
 # Use `~/Documents/Torrents` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+#defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+#defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
 
 # Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
+#defaults write org.m0k.transmission DownloadAsk -bool false
 
 # Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+#defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
 # Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
+#defaults write org.m0k.transmission WarningDonate -bool false
 # Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
+#defaults write org.m0k.transmission WarningLegal -bool false
 
 ###############################################################################
 # Twitter.app                                                                 #

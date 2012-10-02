@@ -1,0 +1,16 @@
+#!/bin/bash
+#PATH elements that are global among all my systems. PATH elements that are
+#unique to a specific computer need to go in .extra as it is ignored by git.
+
+# PATH like a bawss
+PATH=/opt/local/bin
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/opt/local/sbin
+PATH=$PATH:/bin
+PATH=$PATH:/sbin
+PATH=$PATH:/sw/bin
+
+export PATH

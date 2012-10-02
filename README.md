@@ -1,4 +1,6 @@
-# Mathias’s dotfiles
+# cob’s dotfiles
+
+These are my dotfiles. You should fork 
 
 ## Installation
 
