@@ -209,6 +209,7 @@
 " Plugins {
 
     " NERDTree {
+        let NERDTreeMinimalUI = 1       "No need to show UI labels
         let NERDTreeShowBookmarks = 1
         let NERDTreeChDirMode = 2       "Change the CWD when root changes
         let NERDTreeHijackNetrw = 1     "Hijack Netrw
