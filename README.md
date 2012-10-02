@@ -1,12 +1,15 @@
-# cob’s dotfiles
+# cob digs dotfiles
 
-These are my dotfiles. You should fork 
+These are my dotfiles. You should fork http://mths.be/dotfiles. 
 
 ## Installation
 
 ### Using Git and the bootstrap script
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+You can clone the repository wherever you want. (I keep mine in
+`~/Dropbox/dotfiles` [I dig the auto update ability of Dropbox and the
+version control of git]) The bootstrapper script will pull in the latest
+version and copy the files to your home folder.
 
 ```bash
 git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && ./bootstrap.sh
@@ -19,6 +22,9 @@ To update, `cd` into your local `dotfiles` repository and then:
 ```
 
 Alternatively, to update while avoiding the confirmation prompt:
+
+_Careful, the following will overwrite your ~/<dotfiles> if you agree to
+continue!_
 
 ```bash
 ./bootstrap.sh -f
@@ -48,22 +54,6 @@ export PATH="$HOME/utils:$PATH"
 
 If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
 
-My `~/.extra` looks something like this:
-
-```bash
-# PATH additions
-export PATH="~/bin:$PATH"
-
-# Git credentials
-# Not in the repository, to prevent people from accidentally committing under my name
-GIT_AUTHOR_NAME="Mathias Bynens"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="mathias@mailinator.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
-```
-
 You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork_select) instead, though.
 
 ### Sensible OS X defaults
@@ -88,15 +78,4 @@ Suggestions/improvements
 [welcome](https://github.com/mathiasbynens/dotfiles/issues)!
 
 ## Thanks to…
-
-* [Gianni Chiappetta](http://gf3.ca/) for sharing his [amazing collection of dotfiles](https://github.com/gf3/dotfiles)
-* [Matijs Brinkhuis](http://hotfusion.nl/) and his [dotfiles repository](https://github.com/matijs/dotfiles)
-* [Jan Moesen](http://jan.moesen.nu/) and his [ancient `.bash_profile`](https://gist.github.com/1156154) + [shiny _tilde_ repository](https://github.com/janmoesen/tilde)
-* [Ben Alman](http://benalman.com/) and his [dotfiles repository](https://github.com/cowboy/dotfiles)
-* [Nicolas Gallagher](http://nicolasgallagher.com/) and his [dotfiles repository](https://github.com/necolas/dotfiles)
-* [Tom Ryder](http://blog.sanctum.geek.nz/) and his [dotfiles repository](https://github.com/tejr/dotfiles)
-* [Chris Gerke](http://www.randomsquared.com/) and his [tutorial on creating an OS X SOE master image](http://chris-gerke.blogspot.com/2012/04/mac-osx-soe-master-image-day-7.html) + [_Insta_ repository](https://github.com/cgerke/Insta)
-* @ptb and [his _OS X Lion Setup_ repository](https://github.com/ptb/Mac-OS-X-Lion-Setup)
-* [Lauri ‘Lri’ Ranta](http://lri.me/) for sharing [loads of hidden preferences](http://lri.me/hiddenpreferences.txt)
-* [Tim Esselens](http://devel.datif.be/)
-* anyone who [contributed a patch](https://github.com/mathiasbynens/dotfiles/contributors) or [made a helpful suggestion](https://github.com/mathiasbynens/dotfiles/issues)
+[mathiasbynens](https://github.com/mathiasbynens/dotfiles)
