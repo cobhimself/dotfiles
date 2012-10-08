@@ -11,6 +11,8 @@ else
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt
+    #Update .vimrc symlink
+    ln -sF ~/.vim/janus/vim/vimrc ~/.vimrc
 	fi
 fi
 unset doIt
