@@ -8,7 +8,6 @@
 		"endif
 "     }
 " }
-
 " General Options {
 "
 
@@ -18,8 +17,10 @@
         set comments=sr:/*,mb1:*,exr:*/,sr:/**,mb1:*,exr:*/,://  " Auto format comment blocks
         set formatoptions=tcroql        " For automatic formatting.
         set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
+        set shiftwidth=4
+        set tabstop=4
     " }
-	set background=dark             " Assume a dark background
+    set background=dark             " Assume a dark background
     set vb t_vb=""		            " I don't care about bells
     set virtualedit=all             " Turn virtual edit on
     set hidden                      " Don't need to save files to hide them
@@ -32,11 +33,11 @@
     set smartcase                   " Set the search to scan so it ignores case when the search is all lowercase but recognizes uppercase if it's specified.                      
     set shellslash                  " set the forward slash to be the slash to use
     set backspace=2                 " Allow backspacing over indent, eol, and the start of an insert
-	set autowrite                   " automatically write a file when leaving a modified buffer
-	set shortmess+=filmnrxoOtT     	" abbrev. of messages (avoids 'hit enter')
-	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
-	set history=1000  				" Store a ton of history (default is 20)
-	set nospell    	 	        	" spell checking on
+    set autowrite                   " automatically write a file when leaving a modified buffer
+    set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
+    set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
+    set history=1000                " Store a ton of history (default is 20)
+    set nospell                     " spell checking on
 
     " When the page starts to scroll, keep the cursor 8 lines from the top and 8
     " lines from the bottom
@@ -44,7 +45,7 @@
 
     set showfulltag                 " When completing by tag, show the whole tag, not just the function name
     set fillchars=""                " get rid of the silly characters in window separators
-    set expandtab                   " Turn tabs into spaces
+    set noexpandtab                   " Don't turn tabs into spaces
 
     " GUI Options {
 
@@ -111,9 +112,10 @@
 		set viewdir=$HOME/.vim/_views// 	" same for view files
 		
 		"" Creating directories if they don't exist
-		"silent execute '!mkdir -p $HOME/.vimbackup'
-		"silent execute '!mkdir -p $HOME/.vimswap'
-		"silent execute '!mkdir -p $HOME/.vimviews'
+    silent execute '!mkdir -p $HOME/.vim/_backup'
+    silent execute '!mkdir -p $HOME/.vim/_temp'
+    silent execute '!mkdir -p $HOME/.vim/_views'
+
 		au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
 		au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
     " }
@@ -208,6 +210,30 @@
 
 " Plugins {
 
+    " vimwiki {
+        let g:vimwiki_html_header_numbering = 2 " Number the headers
+        let wiki_cob = {}
+        let wiki_cob.path = '~/Dropbox/cob_wiki/'
+        let wiki_cob.html_template = ''
+        let wiki_cob.ext = '.md'
+        let wiki_cob.syntax: 'markdown'
+        let wiki_cob.nested_syntaxes = {
+          \ 'xml': 'xml',
+          \ 'javascript': 'javascript',
+          \ 'html': 'html',
+          \ 'python': 'python'
+        \ }
+
+        hi VimwikiHeader1 guifg=#ff5500 gui=bold
+        hi VimwikiHeader2 guifg=#b1d631 gui=bold
+        hi VimwikiHeader3 guifg=#7097B3 gui=bold
+        hi VimwikiHeader4 guifg=#ff9800
+        hi VimwikiHeader5 guifg=#b1d631
+        hi VimwikiHeader6 guifg=#7e8aa2
+
+        let g:vimwiki_list = [wiki_cob]
+    " }
+
     " NERDTree {
         let NERDTreeMinimalUI = 1       "No need to show UI labels
         let NERDTreeShowBookmarks = 1
@@ -232,7 +258,6 @@
 
 	" Supertab {
         let g:SuperTabDefaultCompletionType = "context"
-		let g:SuperTabDefaultCompletionType = "context"
         set completeopt=menuone,longest,preview
         "let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 	" }
@@ -249,12 +274,17 @@
         map <silent> <F2> :ShowMarksToggle<CR>
 	" }
 	
-	" Ctags {
-		set tags=./tags;/,~/.vimtags
-	" }
 
     " Tagbar {
+        " Ctags {
+          set tags=./tags;/,~/.vimtags/
+        " }
         let g:tagbar_ctags_bin = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+        nnoremap <silent> <C-SPACE> :TagbarToggle<CR>
+        let g:tagbar_autofocus = 1
+        let g:tagbar_compact = 1    "Don't show help at the top.
+        let g:tagbar_autoshowtag = 1
+        let g:tagbar_autoclose = 1
         let g:tagbar_type_extendscript = {
             \ 'kinds' : [
                 \ 'v:global variables:0:0',
@@ -295,4 +325,9 @@
     "Load NERDTree on startup
     autocmd VimEnter * NERDTree
     autocmd VimEnter * wincmd p
+
+    " Work around FIFO files + NERDTree + Janus bug described:
+    " https://github.com/scrooloose/nerdtree/issues/139
+    autocmd! AuNERDTreeCmd FocusGained
+
 " }

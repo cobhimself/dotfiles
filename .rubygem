@@ -1,0 +1,8 @@
+#!/bin/bash
+#Makes sure ruby gems is updated as well as installing default gems.
+
+#Update gem
+gem update --system
+
+#Get compass
+gem install compass

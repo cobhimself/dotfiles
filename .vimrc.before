@@ -1,2 +1,5 @@
 " vim: set foldmarker={,} foldlevel=1 foldmethod=marker modelines=4
 let mapleader = ","
+
+" I don't need the ack plugin.
+call janus#disable_plugin('ack')
