@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 git pull
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
+	rsync -av --exclude-from=bootstrapExcludeList.txt . ~
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
@@ -11,8 +11,7 @@ else
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt
-    #Update .vimrc symlink
-    ln -sF ~/.vim/janus/vim/vimrc ~/.vimrc
+    ./symlinks.sh
 	fi
 fi
 unset doIt

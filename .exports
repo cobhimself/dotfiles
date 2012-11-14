@@ -1,9 +1,16 @@
 # Make vim the default editor
 export EDITOR="gvim"
+
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
+
 # Highlight section titles in manual pages
 export LESS_TERMCAP_md="$ORANGE"
+
+# Set Grep color output
+export GREP_OPTIONS='--color=auto'
+export GREP_COLORS="mt=1;33:fn=1;31:ln=1;32:se=1;34"
+#export GREP_COLORS="mt=38;5;0;48;5;191:fn=38;5;147:ln=38;5;178:se=38;5;244:bn=38;5;148"
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=32768

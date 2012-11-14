@@ -1,0 +1,8 @@
+.irssi/
+.git/
+.DS_Store
+bootstrap.sh
+README.md
+.vim/
+bootstrapExcludeList.txt
+symlinks.sh
