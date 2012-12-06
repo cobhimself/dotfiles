@@ -53,8 +53,6 @@
         Bundle 'vim-scripts/EasyMotion'
         Bundle 'vim-scripts/ShowMarks'
         Bundle 'vim-scripts/vimwiki'
-        Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
-        Bundle 'klokane/vim-phpunit'
 
         " non github repos
         "Bundle 'git://git.wincent.com/command-t.git'
@@ -236,10 +234,6 @@
 
     " Run the command that was just yanked
     nmap <silent> <leader>rc :@"<cr>
-
-    " Underline the current line with '='
-	nmap <silent> <leader>ul yypVr=
-
 
     " allow command line editing like emacs
     cnoremap <C-A>      <Home>
@@ -555,11 +549,20 @@
 	" }
 
     " tagbar {
-        "nnoremap <silent> <leader>,tb :TagbarToggle<CR>
+        nnoremap <silent> <F3> :TagbarToggle<CR>
 
-		"let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+		let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
         "Let taglist handle extendscript files as javascript
         "let g:tagbar_type_extendscript= 'extendscript;c:classes;m:methods;p:properties;f:functions;v:variables'
+    " }
+
+    " minibufexplorer {
+        "let g:miniBufExplMaxSize = <max lines: defualt 1>
+        let g:miniBufExplMapWindowNavVim = 1
+        map <Leader>b :MiniBufExplorer<cr>
+        "map <Leader>c :CMiniBufExplorer<cr>
+        "map <Leader>u :UMiniBufExplorer<cr>
+        "map <Leader>t :TMiniBufExplorer<cr>
     " }
 
     " pyDict {
@@ -582,12 +585,6 @@
     let g:Powerline_stl_path_style = 'relative'
     " }
     
-    " BufferGator {
-
-		let g:buffergator_split_size = 20
-		let g:buffergator_viewport_split_policy = "B"
-		let g:buffergator_autoexpand_on_split = 0
-    " }
 " }
 
 " Custom Functions {
