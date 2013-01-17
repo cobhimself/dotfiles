@@ -12,10 +12,11 @@ PATH=$PATH:/opt/local/sbin
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
 PATH=$PATH:/usr/local/share
-PATH=$PATH:/usr/local/Cellar/ruby/1.9.3-p194/bin
 PATH=$PATH:/sw/bin
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:/usr/local/Cellar/php54/5.4.7/bin
+PATH=$PATH:/usr/local/Cellar/php54/5.4.9/bin
+PATH=$PATH:/usr/local/Cellar/ruby/1.9.3-p194/bin
 PATH=$PATH:~/bin
 PATH=$PATH:~/Dropbox/bin
 

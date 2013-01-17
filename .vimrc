@@ -31,7 +31,7 @@
 		Bundle 'vim-scripts/Smart-Tabs'
         Bundle 'Lokaltog/vim-powerline'
         Bundle 'ScrollColors'
-        Bundle 'StanAngeloff/php.vim' 
+        "Bundle 'StanAngeloff/php.vim' 
         Bundle 'ervandew/supertab'
         Bundle 'gmarik/ide-popup.vim'
         Bundle 'groenewege/vim-less'
@@ -53,12 +53,12 @@
         Bundle 'vim-scripts/EasyMotion'
         Bundle 'vim-scripts/ShowMarks'
         Bundle 'vim-scripts/vimwiki'
-        Bundle 'vim-scripts/PDV--phpDocumentor-for-Vim'
-        Bundle 'klokane/vim-phpunit'
-
-        " non github repos
-        "Bundle 'git://git.wincent.com/command-t.git'
-        " ...
+        Bundle 'spf13/PIV'
+        Bundle 'altercation/vim-colors-solarized'
+        "Bundle 'vim-scripts/php-doc-upgrade'
+        "Bundle 'klokane/vim-phpunit'
+		Bundle 'joonty/vim-phpqa.git'
+        Bundle 'mattn/zencoding-vim'
 
         filetype plugin indent on     " required!
         "
@@ -140,6 +140,7 @@
         set guioptions+=c               " Don't show gui popups, put them in the console.
         set guioptions-=r               " No right hand scrollbar.
         set guioptions-=l               " No left hand scrollbar.
+        set guioptions-=L               " No left hand scrollbar (even if there is a vertical split).
         set guioptions-=b               " No bottom hand scrollbar.
 
         " Set up the gui cursor to look nice
@@ -150,14 +151,15 @@
         set guicursor+=r-cr:hor20-Cursor
         set guicursor+=sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
-        color cob     	       		    " load a colorscheme
+		color solarized        		    " load a colorscheme
+        "color cob     	       		    " load a colorscheme
         let python_highlight_all=1      " Use all highlighting from python syntax
         set tabpagemax=15 				" only show 15 tabs
         set showmode                   	" display the current mode
 
         set cursorline  				" highlight current line
-        hi cursorline guibg=#333333 	" highlight bg color of current line
-        hi CursorColumn guibg=#333333   " highlight cursor
+        "hi cursorline guibg=#333333 	" highlight bg color of current line
+        "hi CursorColumn guibg=#333333   " highlight cursor
 
         if has('cmdline_info')
             set ruler                  	" show the ruler
@@ -417,6 +419,9 @@
 
 	" For when you forget to sudo.. Really Write the file.
 	cmap w!! w !sudo tee % >/dev/null
+	
+	" Map F1 to esc so pressing F1 doesn't open up help
+    imap <F1> <esc>
 " }
 
 " Plugins {
@@ -582,12 +587,39 @@
     let g:Powerline_stl_path_style = 'relative'
     " }
     
+    " PHPQA {
+		let g:phpqa_messdetector_ruleset="~/Dropbox/dotfiles/.vim/phpqa/phpmd_rulesets/magento/magento-ruleset.xml"
+
+		" Set the codesniffer args (default = "--standard=PHPCS")
+		let g:phpqa_codesniffer_args = "--standard=Mage -n"
+
+		" Don't run messdetector on save (default = 1)
+		let g:phpqa_messdetector_autorun = 1
+
+		" Don't run codesniffer on save (default = 1)
+		let g:phpqa_codesniffer_autorun = 1
+
+		" Show code coverage on load (default = 0)
+		let g:phpqa_codecoverage_autorun = 1
+    " }
+
     " BufferGator {
 
 		let g:buffergator_split_size = 20
 		let g:buffergator_viewport_split_policy = "B"
 		let g:buffergator_autoexpand_on_split = 0
     " }
+
+    " spf13/PIV {
+    let g:pdv_cfg_Type = "mixed"
+	let g:pdv_cfg_Package = "Webdav"
+	let g:pdv_cfg_Version = "//autogen//"
+	let g:pdv_cfg_Author = ""
+	let g:pdv_cfg_Copyright = "Copyright (c) 2012 Elevate All rights reserved."
+	let g:pdv_cfg_License = "PHP Version 5.3 {@link http://www.php.net/license/5_3.txt}"
+    let g:DisableAutoPHPFolding = 1
+    " }
+
 " }
 
 " Custom Functions {
