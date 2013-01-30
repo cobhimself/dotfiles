@@ -59,6 +59,7 @@
         "Bundle 'klokane/vim-phpunit'
 		Bundle 'joonty/vim-phpqa.git'
         Bundle 'mattn/zencoding-vim'
+        Bundle 'Raimondi/delimitMate'
 
         filetype plugin indent on     " required!
         "
@@ -617,6 +618,8 @@
 	let g:pdv_cfg_Author = ""
 	let g:pdv_cfg_Copyright = "Copyright (c) 2012 Elevate All rights reserved."
 	let g:pdv_cfg_License = "PHP Version 5.3 {@link http://www.php.net/license/5_3.txt}"
+	let g:PIVAutoClose = 1
+	let g:PIVPearStyle = 1
     let g:DisableAutoPHPFolding = 1
     " }
 
