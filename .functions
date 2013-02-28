@@ -1,5 +1,18 @@
 SSH_ENV="$HOME/.ssh/environment"
 
+# `g` is a shortcut for git, it defaults to `git s` (status) if no argument is
+# given.`
+function g() {
+    local cmd=${1-s}
+	shift
+	git $cmd $@
+}
+
+# Commit pending changes and quote all arguments as message
+function gg() {
+    git ci -m "$*"
+}
+
 function start_agent {
      echo "Initialising new SSH agent..."
      /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
