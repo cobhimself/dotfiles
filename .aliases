@@ -11,8 +11,47 @@ alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Dropbox/Projects"
+
+## Git shortcuts
+## These shortucts are paired with the git config aliases
+
+# Save two characters =D
 alias g="git"
+# Show the status of the current branch
 alias gs="git status"
+# Add a file to the staging area
+alias ga="g a"
+# View the current working tree status using the short format
+alias gss="g s"
+# Commit all changes
+alias gca="g ca"
+# View the SHA, description, and history graph of the latest 20 commits
+alias gl="g l"
+
+# Start a git flow feature
+alias gsf="g sf"
+# Finish a git flow feature
+alias gff="g ff"
+# Finish a git flow feature using rebase
+alias gffr="g ffr"
+# Start a git flow hotix
+alias gsh="g sh"
+# Finish a git flow hotix
+alias gfh="g fh"
+# Start a git flow release
+alias gsr="g sr"
+# Finish a git flow release
+alias gfr="g fr"
+
+# Switch to a branch, creating it if necessary
+alias gb="g go"
+# Show the diff between the latest commit and the current state
+alias gd="g d"
+# Clone a repository including all submodules
+alias gc="g c"
+# Add diff to the commit messages
+alias gcd="g commit --verbose"
+
 alias h="history"
 alias j="jobs"
 alias gvim="mvim --remote-silent"
