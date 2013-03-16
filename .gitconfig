@@ -1,4 +1,6 @@
 [alias]
+	# Add a file to the staging area
+	a = add
 	# View the SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph
 	# View the current working tree status using the short format
@@ -25,6 +27,22 @@
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
+
+	# Start a git flow feature
+	sf = flow feature start
+	# Finish a git flow feature
+	ff = flow feature finish
+	# Finish a git flow feature using rebase
+	ffr = flow feature finish -r
+	# Start a git flow hotix
+	sh = flow hotfix start
+	# Finish a git flow hotix
+	fh = flow hotfix finish
+	# Start a git flow release
+	sr = flow release start
+	# Finish a git flow release
+	fr = flow release finish
+
 
 [apply]
 	# Detect whitespace errors when applying a patch
