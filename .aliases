@@ -33,7 +33,7 @@ alias gsf="g sf"
 # Finish a git flow feature using rebase
 alias gff="g ffr"
 # Finish a git flow feature not using rebase
-alias gffr="g ffnr"
+alias gffnr="g ff"
 # Start a git flow hotix
 alias gsh="g sh"
 # Finish a git flow hotix
