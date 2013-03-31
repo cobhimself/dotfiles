@@ -30,10 +30,10 @@
 
 	# Start a git flow feature
 	sf = flow feature start
-	# Finish a git flow feature
-	ff = flow feature finish
 	# Finish a git flow feature using rebase
-	ffr = flow feature finish -r
+	ff = flow feature finish -r
+	# Finish a git flow feature
+	ffnr = flow feature finish
 	# Start a git flow hotix
 	sh = flow hotfix start
 	# Finish a git flow hotix
