@@ -1,3 +1,10 @@
+= Version 1.2 =
+
+ - Add .multitail.conf as well as the multitail alias that uses that .multitail.conf file as the config.
+ - Set alias gffnr correctly.
+ - Reset gitconfig aliases back to normal ff and ffr.
+ - Rebase by default on gff
+
 = Version 1.1 =
 
  - Additional git aliases added.
