@@ -5,7 +5,7 @@ dir=`pwd`
 
 function symlink() {
     echo $1 => $2
-    ln -sF $1 $2
+    ln -sfF $1 $2
 }
 
 #This script is responsible for creating/updating any symlinks to be
@@ -13,4 +13,5 @@ function symlink() {
 
 symlink ${dir}/.vim/ ~/.vim
 symlink ${dir}/.vimrc ~/.vimrc
+symlink ${dir}/.multitail.conf ~/.multitail.conf
 #symlink ${dir}/.irssi/ ~/.irssi

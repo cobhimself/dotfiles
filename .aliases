@@ -12,6 +12,8 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Dropbox/Projects"
 
+## Multitail - Use user config file.
+alias multitail="multitail --config ~/.multitail.conf"
 ## Git shortcuts
 ## These shortucts are paired with the git config aliases
 
@@ -30,10 +32,10 @@ alias gl="g l"
 
 # Start a git flow feature
 alias gsf="g sf"
-# Finish a git flow feature
-alias gff="g ff"
 # Finish a git flow feature using rebase
-alias gffr="g ffr"
+alias gff="g ffr"
+# Finish a git flow feature not using rebase
+alias gffnr="g ff"
 # Start a git flow hotix
 alias gsh="g sh"
 # Finish a git flow hotix
