@@ -12,6 +12,8 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Dropbox/Projects"
 
+## Multitail - Use user config file.
+alias multitail="multitail --config ~/.multitail.conf"
 ## Git shortcuts
 ## These shortucts are paired with the git config aliases
 
