@@ -13,7 +13,11 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/Dropbox/Projects"
 
 ## Multitail - Use user config file.
-alias multitail="multitail --config ~/.multitail.conf"
+alias multitail="multitail -T --follow-all --config ~/.multitail.conf --basename --mark-interval 5"
+
+## Magento Logs
+alias magelogs="multitail -cS magento -cS magento-authnetcim /tmp/magento/var/log/authnetcim.log -cS magento -cS magento-exception /tmp/magento/var/log/exception.log -cS magento /tmp/magento/var/log/system.log"
+
 ## Git shortcuts
 ## These shortucts are paired with the git config aliases
 
