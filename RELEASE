@@ -1,3 +1,8 @@
+= Version 1.4 =
+
+ - Update .vim submodule with the latest plugin versions.
+ - Start git flow useage
+
 = Version 1.3 =
 
  - Add magelogs alias.
