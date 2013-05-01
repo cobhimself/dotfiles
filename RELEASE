@@ -1,3 +1,7 @@
+= Version 1.5.1 =
+
+ - Remove all submodules then reset .vim submodule to cob's.
+
 = Version 1.5 =
 
  - Fix symlinks script.
