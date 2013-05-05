@@ -1,3 +1,7 @@
+= Version 1.6 =
+
+ - Add .tmux.conf
+
 = Version 1.5.1 =
 
  - Remove all submodules then reset .vim submodule to cob's.
