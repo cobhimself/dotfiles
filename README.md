@@ -12,7 +12,7 @@ version control of git]) The bootstrapper script will pull in the latest
 version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && ./bootstrap.sh
+git clone https://github.com/cobhimself/dotfiles.git && cd dotfiles && ./bootstrap.sh
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:
